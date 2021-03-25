@@ -106,6 +106,10 @@ if ($_POST['save'] || $_POST['force']) {
 			$reqdfields[] = "domainname";
 			$reqdfieldsn[] = gettext("Domain name");
 		}
+		if ($pconfig['type'] == "gandi-livedns" || $pconfig['type'] == "gandi-livedns-v6") {
+			$reqdfields[] = "ttl";
+			$reqdfieldsn[] = gettext("TTL");
+		}
 	} else {
 		$reqdfields[] = "updateurl";
 		$reqdfieldsn[] = gettext("Update URL");
